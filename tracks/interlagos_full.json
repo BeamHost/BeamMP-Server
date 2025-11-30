@@ -1,0 +1,19 @@
+// File: tracks/interlagos_full.json
+{
+  "layoutId": "interlagos_full",
+  "layoutName": "Interlagos Full",
+  "mapName": "interlagos",
+  "checkpoints": [
+    {"id": 1, "position": {"x": 0, "y": 0, "z": 0}, "radius": 6, "sectorIndex": 1},
+    {"id": 2, "position": {"x": 120, "y": 15, "z": 5}, "radius": 6, "sectorIndex": 1},
+    {"id": 3, "position": {"x": 260, "y": 35, "z": 8}, "radius": 6, "sectorIndex": 2},
+    {"id": 4, "position": {"x": 420, "y": 40, "z": 12}, "radius": 6, "sectorIndex": 2},
+    {"id": 5, "position": {"x": 610, "y": 75, "z": 18}, "radius": 6, "sectorIndex": 3}
+  ],
+  "startGrid": [
+    {"gridIndex": 1, "position": {"x": -10, "y": -2, "z": 0}, "yaw": 0},
+    {"gridIndex": 2, "position": {"x": -14, "y": -2, "z": 0}, "yaw": 0},
+    {"gridIndex": 3, "position": {"x": -18, "y": -2, "z": 0}, "yaw": 0},
+    {"gridIndex": 4, "position": {"x": -22, "y": -2, "z": 0}, "yaw": 0}
+  ]
+}

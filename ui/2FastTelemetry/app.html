@@ -1,0 +1,39 @@
+<!-- File: ui/2FastTelemetry/app.html -->
+<!doctype html>
+<html ng-app="twofast">
+<head>
+    <meta charset="utf-8" />
+    <title>2FastTelemetry HUD</title>
+    <link rel="stylesheet" href="app.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="HudCtrl">
+    <div class="hud">
+        <div class="lapbar">
+            <div>Lap: {{state.lapTime | number:3}}s</div>
+            <div>PB: {{state.bestLap | number:3}}s</div>
+            <div>Delta: <span ng-class="{fast: state.delta < 0, slow: state.delta > 0}">{{state.delta | number:3}}s</span></div>
+        </div>
+        <div class="lapcounter">
+            Lap {{state.lap}} / {{state.totalLaps || '∞'}}
+        </div>
+        <div class="splitbar">
+            Sector {{state.sector}} | Last Split: {{state.splitMs | number:3}}s
+        </div>
+        <div class="startlights" ng-if="state.countdown">
+            <span ng-repeat="n in [3,2,1]" ng-class="{'on': state.countdown <= n}"></span>
+            <span class="go" ng-if="state.countdown <= 0">GO!</span>
+        </div>
+        <div class="standings" ng-if="state.standings.length">
+            <h3>Race Standings</h3>
+            <table>
+                <tr><th>P</th><th>Driver</th><th>Gap</th></tr>
+                <tr ng-repeat="p in state.standings">
+                    <td>{{p.pos}}</td><td>{{p.name}}</td><td>{{p.gap}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
